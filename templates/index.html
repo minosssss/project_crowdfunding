@@ -124,7 +124,7 @@
     $(document).ready(function () {
         coffeeMain();
     });
-    
+
     function coffeeMain() {
         $.ajax({
             type: 'GET',
@@ -156,16 +156,16 @@
             }
         });
     }
-    function coffeeInfo(title) {                
+    function coffeeInfo(title) {
         $.ajax({
             type: 'POST',
             url: '/api/product_info',
-            data: {name_give : title},
-            
+            data: { name_give: title },
+
         });
     }
 
-   
+
 </script>
 
 <body>
@@ -198,7 +198,7 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up" data-aos-delay="200">
                     <h1>펀딩의 모든 것</h1>
-                    <h2>안전하고 신뢰성 있는 펀딩만을 고집합니다.</h2>
+                    <h2>안전하고 신뢰성 있는 펀딩만을 고집합니다. {{testDataHtml}} </h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <a href="#portfolio" class="btn-get-started scrollto">시작하기</a>
                     </div>
@@ -243,12 +243,6 @@
                     <h2>펀딩</h2>
                 </div>
 
-                <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-app">App</li>
-                    <li data-filter=".filter-card">Card</li>
-                    <li data-filter=".filter-web">Web</li>
-                </ul>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" id="coffee">
 
@@ -309,7 +303,6 @@
 
     <!-- Template Main JS File -->
     <script src="/static/assets/js/main.js"></script>
-
 </body>
 
 </html>
