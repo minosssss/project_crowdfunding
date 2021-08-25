@@ -8,11 +8,11 @@
   <title>CPfund-상품정보</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
-
-
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
 
   <!-- Vendor CSS Files -->
   <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 
   <!-- Template Main CSS File -->
   <link href="/static/assets/css/style.css" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- =======================================================
   * Template Name: Arsha - v4.3.0
   * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
@@ -33,62 +33,88 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+
 <script>
   $(document).ready(function () {
-      coffeeMain();
+    coffeeInfo();
   });
-  
-  function coffeeMain() {
-      $.ajax({
-          type: 'GET',
-          url: '/api/list?sample_give=index',
-          data: {},
-          success: function (response) {
-              let coffee = response['main']
-              for (let i = 0; i < coffee.length; i++) {
-                  let main_img = coffee[0]['main_img']
-                  let title = coffee[0]['title']
-                  let price = coffee[0]['price']
-                  let info_img = coffee[0]['info_img']
+  $(document).ready(function () {
+    coffeeMain();
+  });
 
-                  let temp_html = `<div class="row gy-4">
-        
-                                      <div class="col-lg-8">
-                                        <div class="portfolio-details-slider swiper-container">
-                                          <div class="swiper-wrapper align-items-center">
-                                    
-                                            <div class="swiper-slide">
-                                              <img src="${info_img}" alt="">
-                                            </div>
-                                          </div>
-                                          <div class="swiper-pagination"></div>
-                                        </div>
-                                      </div>
-                                    
-                                      <div class="col-lg-4">
-                                        <div class="portfolio-info">
-                                          <h3>상품 정보</h3>
-                                          <ul>
-                                            <li><strong>상품명: ${title}</strong>: </li>
-                                            <li><strong>펀딩종류: 원두</strong>:</li>
-                                            <li><strong>펀딩금액: ${price}</strong>:</li>
-                                          </ul>
-                                        </div>
-                                        <div class="portfolio-description">
-                                          <a href="#"><img src="${main_img}" alt="">
-                                    
-                                          </a>
-                                    
-                                        </div>
-                                      </div>
-                                    
-                                    </div>`
-                  $('#coffee_info').append(temp_html)
-              }
-          }
-      });
-  }
+  function coffeeMain() {
+    $.ajax({
+        type: 'GET',
+        url: '/api/list?sample_give=index',
+        data: {},
+        success: function (response) {
+            let coffee = response['main']
+            alert("전체 불러오기 완료!")
+            for (let i = 0; i < coffee.length; i++) {
+                let main_img = coffee[i]['main_img']
+                let title = coffee[i]['title']
+                let price = coffee[i]['price']
+                let product_no = coffee[i]['product_no']
+            }
+        }
+    });
+}
+          
+function coffeeInfo() {
+  $.ajax({
+    type: 'GET',
+    url: 'api/product_info',
+    data: {},
+    success: function (response) {
+        console.log(response)
+      let find_one = response['find_one']
+        alert(find_one, '개별 제품!')
+        let main_img = find_one['main_img']
+        let title = find_one['title']
+        let price = find_one['price']
+        let info_img = find_one['info_img']
+        let product_no = find_one['product_no']
+
+        let temp_html = `<div class="row gy-4">
+
+                      <div class="col-lg-8">
+                        <div class="portfolio-details-slider swiper-container">
+                          <div class="swiper-wrapper align-items-center">
+                    
+                            <div class="swiper-slide">
+                              <img src="${info_img}" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-pagination"></div>
+                        </div>
+                      </div>
+                    
+                      <div class="col-lg-4">
+                        <div class="portfolio-info">
+                          <h3>상품 정보</h3>
+                          <ul>
+                            <li><strong>상품명: ${title}</strong>: </li>
+                            <li><strong>펀딩종류: 원두</strong></li>
+                            <li><strong>펀딩금액: ${price}</strong>:</li>
+                          </ul>
+                        </div>
+                        <div class="portfolio-description">
+                          <a href="#"><img src="${main_img}" alt="">
+                    
+                          </a>
+                    
+                        </div>
+                      </div>
+                    
+                    </div>`
+        $('#coffee_info').append(temp_html)
+      }
+    
+  });
+}
+
 </script>
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -118,7 +144,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">홈</a></li>
+          <li><a href="/">홈</a></li>
           <li>상품 정보</li>
         </ol>
         <h2>상품 정보</h2>
@@ -152,7 +178,7 @@
       </div>
     </div>
 
-    
+
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
@@ -169,7 +195,8 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="/static/assets/vendor/aos/aos.js"></script>
@@ -183,5 +210,4 @@
   <script src="/static/assets/js/main.js"></script>
 
 </body>
-
 </html>

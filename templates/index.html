@@ -136,9 +136,10 @@
                     let main_img = coffee[i]['main_img']
                     let title = coffee[i]['title']
                     let price = coffee[i]['price']
+                    let product_no = coffee[i]['product_no']
 
                     let temp_html = `<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                                        <div class="portfolio-img"><a href="/product" onclick="coffeeInfo('${name}')"><img
+                                        <div class="portfolio-img"><a href="/product" onclick="coffeeInfo('${title}')" id="product_no"><img
                                                     src="${main_img}" class="img-fluid" alt=""></a>
                                         </div>
                                         <div class="portfolio-info">
@@ -155,14 +156,12 @@
             }
         });
     }
-    function coffeeInfo(name) {
+    function coffeeInfo(title) {                
         $.ajax({
             type: 'POST',
-            url: '/api/lnfo',
-            data: {name_give : name},
-            success: function (response) {
-                alert(response['msg']);
-            }
+            url: '/api/product_info',
+            data: {name_give : title},
+            
         });
     }
 
@@ -175,7 +174,7 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">CPfund</a></h1>
+            <h1 class="logo me-auto"><a href="/">CPfund</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 

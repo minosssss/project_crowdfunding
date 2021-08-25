@@ -78,3 +78,4 @@ minO/
 # File
 dbprac.py
 test.py
+__pycache__/

@@ -13,13 +13,20 @@ db = client.dbsparta
 def home():
     return render_template('index.html')
 
+# @app.route('/product')
+# def product():
+#     return render_template('product.html')
+
+
 @app.route('/product')
 def product():
     return render_template('product.html')
 
+
 @app.route('/login')
 def login():
     return render_template('login.html')
+
 
 @app.route('/sign_up')
 def sign_up():
@@ -37,11 +44,16 @@ def show_product():
 #     print(info_receive)
 #     return jsonify({'msg': 'info test'})
 
-# @app.route('/api/info', methods=['POST'])
-# def show_Info():
-#     info_receive = request.form['name_give']
-#     print(info_receive)
-#     return jsonify({'msg': 'test'})
+
+@app.route('/api/product_info', methods=['POST', 'GET'])
+def show_Info():
+    info_receive = request.form.get('name_give', False)
+    print(info_receive)
+    find_one = list(db.coffee.find(
+        {'title': info_receive}, {'_id': False}))
+    print(find_one)
+    return jsonify({'find_one': find_one})
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
