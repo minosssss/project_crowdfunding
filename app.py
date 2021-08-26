@@ -64,7 +64,7 @@ def show_product():
     # print(title)
     # return render_template('product.html', title=title)
 
-
+# 제품번호 받아서 product.html로 값 넘겨주기
 @app.route('/product', methods=['GET'])
 def product():
     product_no = request.args.get('product_no')
