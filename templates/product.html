@@ -35,39 +35,6 @@
 </head>
 
 <script>
-  $(document).ready(function () {
-    coffeeInfo();
-});
-  function coffeeInfo() {
-    $.ajax({
-        type: 'GET',
-        url: '/api/product/coffee?product_no=',
-        data: {},
-        success: function (response) {
-            console.log(response)
-            
-            }
-    })
-  
-  }
-      
-  $(document).ready(function () {
-    coffeeInfo2();
-  });
-  function coffeeInfo2() {
-    $.ajax({
-        type: 'GET',
-        url: '/api/product/',
-        data: {},
-        success: function (response) {
-            console.log(response)
-            
-            }
-    })
-  
-  }
- 
-</script>
 </script>
 
 <body>
@@ -129,9 +96,9 @@
             <div class="portfolio-info">
               <h3>상품 정보</h3>
               <ul>
-                <li><strong>상품명: {{title}}</strong>: </li>
-                <li><strong>펀딩종류: 커피 원두</strong>:</li>                
-                <li><strong>펀딩금액: {{price}} </strong>:</li>
+                <li><strong>상품명: {{title}}</strong></li>
+                <li><strong>펀딩종류: 커피 원두</strong></li>                
+                <li><strong>펀딩금액: {{price}} </strong></li>
               </ul>
             </div>
             <div class="portfolio-description">

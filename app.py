@@ -1,7 +1,6 @@
 from pymongo import MongoClient
 
 from flask import Flask, render_template, jsonify, request, redirect, url_for
-from pymongo.collection import _FIND_AND_MODIFY_DOC_FIELDS
 
 app = Flask(__name__)
 
@@ -66,10 +65,9 @@ def show_product():
     # return render_template('product.html', title=title)
 
 
-@app.route('/api/product', methods=['GET'])
-def product2():
+@app.route('/product', methods=['GET'])
+def product():
     product_no = request.args.get('product_no')
-    print(product_no)
     find_one = db.coffee.find_one({'product_no': product_no}, {'_id': False})
     title = find_one['title']
     price = find_one['price']

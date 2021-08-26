@@ -140,7 +140,7 @@
                     let product_no = coffee[i]['product_no']
                     
                     let temp_html = `<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                                        <div class="portfolio-img"><a href="/api/product?product_no=${product_no}" onclick="coffeeInfo('${product_no}')" id="product_no"><img
+                                        <div class="portfolio-img"><a href="/product?product_no=${product_no}" onclick="coffeeInfo('${product_no}')" id="product_no"><img
                                                     src="${main_img}" class="img-fluid" alt=""></a>
                                         </div>
                                         <div class="portfolio-info">
@@ -163,7 +163,7 @@
         
         $.ajax({ 
             type: 'GET', 
-            url: `api/product/?product_no=${product_no}`
+            url: `/product?product_no=${product_no}`
         }
         ); 
     }
