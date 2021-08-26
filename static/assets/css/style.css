@@ -879,9 +879,7 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio {
-  height: 350vh;
-}
+
 .portfolio #portfolio-flters {
   list-style: none;
   margin-bottom: 20px;
@@ -1594,7 +1592,9 @@ section {
 # Footer
 --------------------------------------------------------------*/
 footer {
-  position: fixed;
+  float: left;
+  width: 100%;
+  position: relative;
   bottom: 0;
 }
 #footer {
