@@ -37,82 +37,37 @@
 <script>
   $(document).ready(function () {
     coffeeInfo();
-  });
-  $(document).ready(function () {
-    coffeeMain();
-  });
-
-  function coffeeMain() {
+});
+  function coffeeInfo() {
     $.ajax({
         type: 'GET',
-        url: '/api/list?sample_give=index',
+        url: '/api/product/coffee?product_no=',
         data: {},
         success: function (response) {
-            let coffee = response['main']
-            alert("전체 불러오기 완료!")
-            for (let i = 0; i < coffee.length; i++) {
-                let main_img = coffee[i]['main_img']
-                let title = coffee[i]['title']
-                let price = coffee[i]['price']
-                let product_no = coffee[i]['product_no']
+            console.log(response)
+            
             }
-        }
-    });
-}
-          
-function coffeeInfo() {
-  $.ajax({
-    type: 'GET',
-    url: 'api/product_info',
-    data: {},
-    success: function (response) {
-        console.log(response)
-      let find_one = response['find_one']
-        alert(find_one, '개별 제품!')
-        let main_img = find_one['main_img']
-        let title = find_one['title']
-        let price = find_one['price']
-        let info_img = find_one['info_img']
-        let product_no = find_one['product_no']
-
-        let temp_html = `<div class="row gy-4">
-
-                      <div class="col-lg-8">
-                        <div class="portfolio-details-slider swiper-container">
-                          <div class="swiper-wrapper align-items-center">
-                    
-                            <div class="swiper-slide">
-                              <img src="${info_img}" alt="">
-                            </div>
-                          </div>
-                          <div class="swiper-pagination"></div>
-                        </div>
-                      </div>
-                    
-                      <div class="col-lg-4">
-                        <div class="portfolio-info">
-                          <h3>상품 정보</h3>
-                          <ul>
-                            <li><strong>상품명: ${title}</strong>: </li>
-                            <li><strong>펀딩종류: 원두</strong></li>
-                            <li><strong>펀딩금액: ${price}</strong>:</li>
-                          </ul>
-                        </div>
-                        <div class="portfolio-description">
-                          <a href="#"><img src="${main_img}" alt="">
-                    
-                          </a>
-                    
-                        </div>
-                      </div>
-                    
-                    </div>`
-        $('#coffee_info').append(temp_html)
-      }
-    
+    })
+  
+  }
+      
+  $(document).ready(function () {
+    coffeeInfo2();
   });
-}
-
+  function coffeeInfo2() {
+    $.ajax({
+        type: 'GET',
+        url: '/api/product/',
+        data: {},
+        success: function (response) {
+            console.log(response)
+            
+            }
+    })
+  
+  }
+ 
+</script>
 </script>
 
 <body>
@@ -154,7 +109,40 @@ function coffeeInfo() {
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
-      <div class="container" id=coffee_info>
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper-container">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="{{info_img}}" alt="">
+                </div>            
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>상품 정보</h3>
+              <ul>
+                <li><strong>상품명: {{title}}</strong>: </li>
+                <li><strong>펀딩종류: 커피 원두</strong>:</li>                
+                <li><strong>펀딩금액: {{price}} </strong>:</li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+       <a href="#"><img src="{{main_img}}" alt="">
+		   
+		</a>
+				
+            </div>
+          </div>
+
+        </div>
 
       </div>
     </section><!-- End Portfolio Details Section -->
@@ -178,7 +166,7 @@ function coffeeInfo() {
       </div>
     </div>
 
-
+    
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
@@ -195,8 +183,7 @@ function coffeeInfo() {
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="/static/assets/vendor/aos/aos.js"></script>
@@ -210,4 +197,5 @@ function coffeeInfo() {
   <script src="/static/assets/js/main.js"></script>
 
 </body>
+
 </html>

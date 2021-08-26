@@ -880,7 +880,7 @@ section {
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio {
-  height: 3000px;
+  height: 350vh;
 }
 .portfolio #portfolio-flters {
   list-style: none;
@@ -1593,6 +1593,10 @@ section {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+footer {
+  position: fixed;
+  bottom: 0;
+}
 #footer {
   font-size: 14px;
   background: #37517e;
