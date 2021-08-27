@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>CPfund-상품정보</title>
+  <title>{{title}}-상품정보</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!-- Google Fonts -->
@@ -25,6 +25,7 @@
 
   <!-- Template Main CSS File -->
   <link href="/static/assets/css/style.css" rel="stylesheet">
+  <link href="/static/assets/css/progress.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- =======================================================
   * Template Name: Arsha - v4.3.0
@@ -50,7 +51,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="/">홈</a></li>
-          <li><a class="nav-link scrollto" href="/ #portfolio">펀딩</a></li>
+          <li><a class="nav-link scrollto" href="/#portfolio">펀딩</a></li>
           <li><a class="getstarted scrollto" href="/login">로그인/회원가입</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -86,7 +87,7 @@
                 <!-- 각 전달받은 값들 넣어주기 -->
                 <div class="swiper-slide">
                   <img src="{{info_img}}" alt="">
-                </div>
+                </div>            
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -97,12 +98,27 @@
               <h3>상품 정보</h3>
               <ul>
                 <li><strong>상품명: {{title}}</strong></li>
-                <li><strong>펀딩종류: 커피 원두</strong></li>
+                <li><strong>펀딩종류: 커피 원두</strong></li>                
                 <li><strong>펀딩금액: {{price}} </strong></li>
+                <li>
+                  <div class="FundingDetailSummary_graph__3tXzw">
+                    <div class="FundingDetailSummary_rate__4Rz_M">
+                      <strong class="FundingDetailSummary_number__3xyc9">26</strong>%</div>
+                    <div class="FundingDetailSummary_bar__1wact">
+                      <span class="FundingDetailSummary_current__2bGJi" style="width: 26%;"></span></div>
+                    <span class="FundingDetailSummary_goal__2Yfil"><span class="FundingDetailSummary_number__3xyc9">1,000,000</span>원 목표</span>
+                    <span class="FundingDetailSummary_amount__7Ploe"><strong class="FundingDetailSummary_number__3xyc9">267,800</strong>원</span></div>
+                </li>
+                <li>
+                  <a class="funding" href="#">펀딩 참여</a>
+                </li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <img src="{{main_img}}" alt="">
+       <a href="#"><img src="{{main_img}}" alt="">
+		   
+		</a>
+				
             </div>
           </div>
 
@@ -130,7 +146,7 @@
       </div>
     </div>
 
-
+    
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
@@ -147,8 +163,7 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="/static/assets/vendor/aos/aos.js"></script>

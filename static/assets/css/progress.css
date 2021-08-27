@@ -1,0 +1,22 @@
+.FundingDetailSummary_graph__3tXzw {
+  height: 50px;
+}
+.FundingDetailSummary_bar__1wact {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+.FundingDetailSummary_current__2bGJi {
+  width: 26%;
+  background-color: #0c63e4;
+  height: 3px;
+  float: left;
+}
+.FundingDetailSummary_goal__2Yfil {
+  float: left;
+}
+.FundingDetailSummary_amount__7Ploe {
+  float: right;
+}

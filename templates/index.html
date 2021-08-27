@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>CPfund-펀딩의 모든 것</title>
+    <title>커피의 모든 것</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -139,7 +139,7 @@
                     let price = coffee[i]['price']
                     let product_no = coffee[i]['product_no']
                     
-                    let temp_html = `<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    let temp_html = ` <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div class="portfolio-img"><a href="/product?product_no=${product_no}" onclick="coffeeInfo('${product_no}')" id="product_no"><img
                                                     src="${main_img}" class="img-fluid" alt=""></a>
                                         </div>
@@ -183,7 +183,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">홈</a></li>
-                    <li><a class="nav-link scrollto" href="#portfolio">펀딩</a></li>
+                    <li><a class="nav-link scrollto" href="#portfolio">상품</a></li>
                     <li><a class="getstarted scrollto" href="/login">로그인/회원가입</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -199,14 +199,14 @@
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <h1>펀딩의 모든 것</h1>
-                    <h2>안전하고 신뢰성 있는 펀딩만을 고집합니다. {{testDataHtml}} </h2>
+                    <h1>커피의 모든 것</h1>
+                    <h2>직접 로스팅 된 신선한 원두만을 고집합니다. {{testDataHtml}} </h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#portfolio" class="btn-get-started scrollto">시작하기</a>
+                        <a href="#portfolio" class="btn-get-started scrollto">펀딩하기</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="/static/assets/img/crowdfunding-3576868_1280.jpg" class="img-fluid animated" alt="">
+                    <img src="https://images.unsplash.com/photo-1556027654-a05ec60d5a4b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80" class="img-fluid animated" alt="">
                 </div>
             </div>
         </div>
@@ -242,11 +242,11 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>펀딩</h2>
+                    <h2>상품</h2>
                 </div>
 
 
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" id="coffee">
+                <div class="row portfolio-container" id="coffee">
 
                 </div>
 
@@ -260,17 +260,17 @@
     <footer id="footer">
 
         <div class="footer-newsletter">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h4>뉴스레터 구독하기</h4>
-                        <p>새로운 펀딩 소식 및 여러 가지 소식들을 받으실 수 있습니다.</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="뉴스레터 구독">
-                        </form>
-                    </div>
-                </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6">
+                <h4>뉴스레터 구독하기</h4>
+                <p>새로운 소식들을 받으실 수 있습니다.</p>
+                <form action="" method="post">
+                  <input type="email" name="email"><input type="submit" value="뉴스레터 구독">
+                </form>
+              </div>
             </div>
+          </div>
         </div>
 
 
