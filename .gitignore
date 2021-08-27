@@ -77,5 +77,6 @@ venv/
 minO/
 # File
 dbprac.py
+tempCodeRunnerFile.py
 test.py
 __pycache__/
