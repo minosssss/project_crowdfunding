@@ -5,7 +5,9 @@
 - FrontEnd: 김재은, 이해준
 - BackEnd: 김재용, 이민호
 
-##기술 스택
+
+## 기술 스택
+
 ### FrontEnd
 HTML / CSS / Bootstrap4
 ### BackEnd
